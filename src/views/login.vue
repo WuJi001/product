@@ -10,6 +10,9 @@ export default {
   data: () => ({
     num: 111,
   }),
+  created() {
+    console.log(this.$route.name);
+  },
 };
 </script>
 

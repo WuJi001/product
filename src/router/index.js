@@ -16,9 +16,17 @@ const routes = [{
         name: 'layout',
         component: layout,
         children: [{
-            path: '/home',
-            name: '',
-            component: () => import('../views/components/home.vue'),
+            path: '/user',
+            name: 'user',
+            component: () => import('../views/UserManagement/user.vue'),
+        }, {
+            path: '/vip',
+            name: 'vip',
+            component: () => import('../views/UserManagement/userVIP.vue'),
+        }, {
+            path: '/vvip',
+            name: 'vvip',
+            component: () => import('../views/UserManagement/userVVIP.vue'),
         }, ]
     },
     {

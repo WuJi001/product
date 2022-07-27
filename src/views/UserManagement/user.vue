@@ -1,11 +1,12 @@
 <template>
-  <div class="home">我的第一个</div>
+  <div class="user">一个平平无奇的普通用户</div>
 </template>
 
 <script>
 export default {
-  name: "home",
+  name: "user",
   data: () => ({}),
+  created() {},
 };
 </script>
 

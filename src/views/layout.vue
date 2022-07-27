@@ -11,37 +11,60 @@
         </div>
       </Header>
       <Layout>
-        <Sider hide-trigger :style="{ background: '#fff' }">
+        <Sider hide-trigger :style="{ background: '#515a6e' }">
+          <div
+            style="
+              margin: 0 auto;
+              width: calc(100% - 50px);
+              height: 60px;
+              color: #fff;
+              overflow: hidden;
+              line-height: 60px;
+              text-align: center;
+              font-size: 20px;
+            "
+          >
+            专业管理系统
+          </div>
           <Menu
             active-name="1-2"
-            theme="light"
+            accordion
+            theme="dark"
             width="auto"
             :open-names="['1']"
           >
             <Submenu name="1">
               <template slot="title">
-                <Icon type="ios-navigate"></Icon>
-                Item 1
+                <Icon type="ios-keypad"></Icon>
+                用户管理
               </template>
-              <MenuItem name="1-1" @click="onccc">Option 1</MenuItem>
+              <MenuItem name="1-1">Option 1</MenuItem>
               <MenuItem name="1-2">Option 2</MenuItem>
               <MenuItem name="1-3">Option 3</MenuItem>
             </Submenu>
             <Submenu name="2">
               <template slot="title">
                 <Icon type="ios-keypad"></Icon>
-                Item 2
+                角色管理
               </template>
               <MenuItem name="2-1">Option 1</MenuItem>
               <MenuItem name="2-2">Option 2</MenuItem>
             </Submenu>
             <Submenu name="3">
               <template slot="title">
-                <Icon type="ios-analytics"></Icon>
-                Item 3
+                <Icon type="ios-keypad"></Icon>
+                岗位管理
               </template>
               <MenuItem name="3-1">Option 1</MenuItem>
               <MenuItem name="3-2">Option 2</MenuItem>
+            </Submenu>
+            <Submenu name="4">
+              <template slot="title">
+                <Icon type="ios-keypad"></Icon>
+                部门管理
+              </template>
+              <MenuItem name="4-1">Option 1</MenuItem>
+              <MenuItem name="4-2">Option 2</MenuItem>
             </Submenu>
           </Menu>
         </Sider>
@@ -49,7 +72,7 @@
           <Breadcrumb :style="{ margin: '24px 0' }">
             <BreadcrumbItem>Home</BreadcrumbItem>
             <BreadcrumbItem>Components</BreadcrumbItem>
-            <BreadcrumbItem>Layout</BreadcrumbItem>
+            <BreadcrumbItem>{{ route_text }}</BreadcrumbItem>
           </Breadcrumb>
           <Card
             :style="{
@@ -59,7 +82,7 @@
               flex: 'auto',
             }"
           >
-            <Content> <router-view></router-view></Content>
+            <Content><router-view></router-view></Content>
           </Card>
         </Layout>
       </Layout>
@@ -69,11 +92,15 @@
 <script>
 export default {
   name: "layout",
-  data: () => ({}),
+  data: () => ({
+    route_text: "",
+  }),
+  created() {},
   methods: {
-    onccc() {
-      console.log(111);
-      this.$router.push("../views/components/home.vue");
+    route_link() {
+      this.tag.push({
+        url: this.$route.path,
+      });
     },
   },
 };
@@ -101,5 +128,11 @@ export default {
 }
 .layout-nav > div {
   margin-right: 20px;
+}
+.ivu-layout-sider {
+  border-top: 1px solid #ccc;
+}
+.ivu-layout-sider-children > ul {
+  margin-top: 15px;
 }
 </style>
