@@ -12,4 +12,9 @@ export default {
 </script>
 
 <style>
+.ellipseText {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 </style>

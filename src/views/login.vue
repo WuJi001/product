@@ -1,8 +1,6 @@
 <template>
   <div class="login">
     <div>我是登录界面</div>
-    <div>我是lizhi分支提交界面</div>
-    <div>我是lizhi分支再次提交界面</div>
   </div>
 </template>
 
